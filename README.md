@@ -17,6 +17,23 @@ Este projeto é um sistema de lista de tarefas ("todolist") desenvolvido como pa
 - **Spring Data JPA:** Para acesso a dados com JPA.
 - **PostgreSQL: Banco** de dados relacional para implementação de persistência de dados.
 
+## Front-End
+
+### Tecnologias Utilizadas:
+
+- **Angular CLI**: 15.2.4
+
+  ```bash
+  @angular-devkit/architect    0.1502.4 (cli-only)
+  @angular-devkit/core         15.2.4 (cli-only)
+  @angular-devkit/schematics   15.2.4 (cli-only)
+  @schematics/angular          15.2.4 (cli-only)
+
+### Configuração do Ambiente:
+1. Certifique-se de ter o Angular CLI instalado. Caso não tenha, execute o seguinte comando:
+   ```bash
+   npm install -g @angular/cli
+
 [Front-End]()
 
 ### Licença:
