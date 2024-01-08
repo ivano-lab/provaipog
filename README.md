@@ -34,7 +34,7 @@ Este projeto é um sistema de lista de tarefas ("todolist") desenvolvido como pa
    ```bash
    npm install -g @angular/cli
 
-[Front-End]()
+Repositório do Front-End em contrução neste [link](https://github.com/ivano-lab/todolistFrontend/tree/main).
 
 ### Licença:
 Este repositório é licenciado sob a [MIT License](LICENSE).
