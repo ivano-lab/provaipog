@@ -1,0 +1,55 @@
+<div
+  cdkDropList
+  class="container-element"
+  (cdkDropListDropped)="drop($event.previousIndex, $event.currentIndex)">
+  <div
+    cdkDrag
+    cdkDragLockAxis="y"
+    cdkDragBoundary=".container-element"
+    class="element"
+    [ngClass]="{'editable shadow-sm': editableElement === element}"
+    [class.cdk-drag-animating]="dragOnGoing"
+    (click)="edit(element)"
+    (keyup.delete)="remove(element)"
+    [cdkDragDisabled]="editableElement === element"
+    (cdkDragStarted)="setDragOnGoing(true)"
+    (cdkDragReleased)="setDragOnGoing(false)"
+    *ngFor="let element of form.elements">
+
+    <app-dynamic-form-create-element-config
+      [form]="form"
+      [element]="element"
+      [visible]="editableElement === element"
+      (onRemove)="edit($event)"
+      (editNext)="edit($event)"></app-dynamic-form-create-element-config>
+
+    <div>
+      <div [ngSwitch]="element.type.elementType">
+        <ng-container *ngSwitchCase="typeText">
+          <app-dynamic-form-create-element-view-text
+            [element]="element"></app-dynamic-form-create-element-view-text>
+        </ng-container>
+        <ng-container *ngSwitchCase="typeTextarea">
+          <app-dynamic-form-create-element-view-textarea
+            [element]="element"></app-dynamic-form-create-element-view-textarea>
+        </ng-container>
+        <ng-container *ngSwitchCase="typeRadio">
+          <app-dynamic-form-create-element-view-choice
+            type="radio"
+            [element]="element"
+            [editable]="editableElement === element"></app-dynamic-form-create-element-view-choice>
+        </ng-container>
+        <ng-container *ngSwitchCase="typeCheckbox">
+          <app-dynamic-form-create-element-view-choice
+            type="checkbox"
+            [element]="element"
+            [editable]="editableElement === element"></app-dynamic-form-create-element-view-choice>
+        </ng-container>
+        <ng-container *ngSwitchCase="typeSession">
+          <app-dynamic-form-create-element-view-session
+            [element]="element"></app-dynamic-form-create-element-view-session>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

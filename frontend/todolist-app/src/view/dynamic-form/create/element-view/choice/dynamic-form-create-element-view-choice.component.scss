@@ -1,0 +1,59 @@
+
+@import "src/assets/scss/variables";
+@import "src/assets/scss/mixins/breakpoints";
+
+.container-element-option{
+  width: 100%;
+}
+
+@include media-breakpoint-up($md){
+  .container-element-option{
+    width: 60%;
+  }
+}
+
+@include media-breakpoint-up($lg){
+  .container-element-option{
+    width: 40%;
+  }
+}
+
+.container-element-option .form-check-input{
+  margin-top: .3rem;
+}
+
+.container-element-option .element-option{
+  line-height: 1.5rem;
+}
+
+.btn.remove {
+  border-radius: 50%;
+  border: 0;
+  font-size: 1.2rem;
+  padding: 1px 7px;
+  line-height: inherit;
+}
+.btn.remove:HOVER, .btn.remove:focus {
+  background-color: var(--jb-create-element-view-chouce-btn-remove-bg-color);
+}
+
+.btn.remove i{
+  opacity: .4;
+}
+
+.container-error-message{
+  font-size: 1.2rem;
+  min-width: 31.2px;
+}
+
+.cdk-drag-preview{
+  background-color: var(--jb-body-bg-color);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

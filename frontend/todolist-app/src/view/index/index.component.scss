@@ -1,0 +1,34 @@
+
+.technology{
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.technology-img{
+  background-color: #dcdcdc;
+  border-radius: 1rem;
+
+  .primeng{
+    padding: .5rem;
+  }
+
+  .bootstrap{
+    padding: .4rem;
+  }
+
+  .sass{
+    padding: .5rem;
+  }
+
+  .typescript{
+    padding: .6rem;
+  }
+}
+
+.technology-description{
+}
+
+.technology-link{
+  position: absolute;
+  bottom: 0;
+}

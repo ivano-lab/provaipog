@@ -1,0 +1,20 @@
+<div class="container-material-input" [class.editable]="editable" [formGroup]="formGroup">
+  <ng-container *ngIf="editable">
+    <input
+      type="text"
+      autocomplete="off"
+      formControlName="value"
+      class="form-control"
+      [ngStyle]="inputStyle"
+      [id]="inputId"
+      [maxLength]="50"
+      (input)="input();"
+      (blur)="save()">
+  </ng-container>
+  <ng-container *ngIf="!editable">
+    <div class="value text-break" style="margin-bottom: .1rem" [ngStyle]="valueStyle" [ngClass]="styleClassValueNotEditable" (click)="edit()">
+      <div #content><ng-content></ng-content></div>
+      <span *ngIf="!content.children.length && !content.textContent">{{value || emptyText}}</span>
+    </div>
+  </ng-container>
+</div>

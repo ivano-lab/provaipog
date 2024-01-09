@@ -1,0 +1,17 @@
+<nav class="navbar navbar-dark navbar-expand-md jb-bg-primary">
+  <div class="container-fluid" *transloco="let translate">
+    <a class="navbar-brand" routerLink="/">
+      <h1>ToDoList App</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" *ngFor="let item of items">
+          <a class="nav-link" [class.active]="activatedItem == item" [routerLink]="item.routerLink">{{translate(item.label)}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

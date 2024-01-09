@@ -1,0 +1,21 @@
+<h1>Add Tarefa</h1>
+
+<form>
+  <label for="titulo" [(ngModel)]="tasks.titulo">Título:</label><br>
+  <input type="text"><br>
+  <label for="task.descricao">Descrição::</label><br>
+  <input type="textarea"><br>
+  <label for="tasks.prioridade" [(ngModel)]="tasks.prioridade">Prioridade:</label>&nbsp;&nbsp;&nbsp;
+  <select name="prioridade" id="prioridade">
+    <option value="baixa">Baixa</option>
+    <option value="media">Média</option>
+    <option value="alta">Alta</option>
+  </select><br>
+  <button pButton label="+" (click)="addTask()"></button>
+</form>
+
+<ul>
+  <li *ngFor="let tarefa of tasks">
+    Tarefa: {{ tarefa.titulo ? tarefa.titulo : '' }} - {{tarefa.prioridade}} - <input type="checkbox" name="pendente" id="">
+  </li>
+</ul>
